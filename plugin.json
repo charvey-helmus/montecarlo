@@ -13,11 +13,11 @@
     "components": [
         {
             "id": "monte-carlo-recipe",
+            "type": "RECIPE",
             "meta": {
                 "label": "Monte Carlo Profit Simulation",
                 "description": "Simulates profit and rebates using Monte Carlo methods",
-                "icon": "icon-random",
-                "type": "RECIPE"
+                "icon": "icon-random"
             }
         }
     ]
