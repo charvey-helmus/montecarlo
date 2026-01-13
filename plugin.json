@@ -12,7 +12,7 @@
     "params": [],
     "components": [
         {
-            "id": "monte-carlo-recipe",
+            "id": "montecarlo",
             "type": "RECIPE",
             "meta": {
                 "label": "Monte Carlo Profit Simulation",
