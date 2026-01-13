@@ -1,0 +1,127 @@
+{
+    "meta": {
+        "label": "Monte Carlo Profit Simulation",
+        "description": "Simulates profit and rebates using Monte Carlo methods",
+        "icon": "icon-random"
+    },
+    "kind": "PYTHON",
+    "inputRoles": [
+        {
+            "name": "input_dataset",
+            "label": "Input Dataset",
+            "description": "Dataset containing deal information",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+    "outputRoles": [
+        {
+            "name": "output_dataset",
+            "label": "Output Dataset",
+            "description": "Dataset containing simulation results",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+    "params": [
+        {
+            "name": "n_simulations",
+            "label": "Number of Simulations",
+            "type": "INT",
+            "description": "Number of Monte Carlo simulations to run per deal",
+            "mandatory": true,
+            "defaultValue": 1000
+        },
+        {
+            "name": "volume_shock_mean",
+            "label": "Volume Shock Mean",
+            "type": "DOUBLE",
+            "description": "Mean of the volume shock distribution (1.0 = no change)",
+            "mandatory": true,
+            "defaultValue": 1.0
+        },
+        {
+            "name": "volume_shock_std",
+            "label": "Volume Shock Std Dev",
+            "description": "Standard deviation of the volume shock distribution",
+            "type": "DOUBLE",
+            "mandatory": true,
+            "defaultValue": 0.15
+        },
+        {
+            "name": "cost_shock_alpha",
+            "label": "Cost Shock Beta Alpha",
+            "type": "DOUBLE",
+            "description": "Alpha parameter for cost shock beta distribution",
+            "mandatory": true,
+            "defaultValue": 2.0
+        },
+        {
+            "name": "cost_shock_beta",
+            "label": "Cost Shock Beta Beta",
+            "type": "DOUBLE",
+            "description": "Beta parameter for cost shock beta distribution",
+            "mandatory": true,
+            "defaultValue": 5.0
+        },
+        {
+            "name": "cost_shock_scale",
+            "label": "Cost Shock Scale",
+            "type": "DOUBLE",
+            "description": "Scale factor for cost shock (multiplier for beta distribution)",
+            "mandatory": true,
+            "defaultValue": 0.04
+        },
+        {
+            "name": "fee_erosion_values",
+            "label": "Fee Erosion Values",
+            "type": "STRINGS",
+            "description": "Possible fee erosion values (as percentages, e.g., 0, 0.1, 0.2)",
+            "mandatory": true,
+            "defaultValue": ["0", "0.1", "0.2"]
+        },
+        {
+            "name": "fee_erosion_probs",
+            "label": "Fee Erosion Probabilities",
+            "type": "DOUBLES",
+            "description": "Probabilities for each fee erosion value (must sum to 1.0)",
+            "mandatory": true,
+            "defaultValue": [0.7, 0.2, 0.1]
+        },
+        {
+            "name": "base_cost_to_serve",
+            "label": "Base Cost to Serve (%)",
+            "type": "DOUBLE",
+            "description": "Base cost to serve as percentage of volume",
+            "mandatory": true,
+            "defaultValue": 1.0
+        },
+        {
+            "name": "backend_rebate_pct",
+            "label": "Backend Rebate (%)",
+            "type": "DOUBLE",
+            "description": "Backend rebate percentage from suppliers",
+            "mandatory": true,
+            "defaultValue": 4.0
+        },
+        {
+            "name": "profit_threshold",
+            "label": "Profit Threshold",
+            "type": "DOUBLE",
+            "description": "Threshold for determining profitable vs loss scenarios (0 = break-even)",
+            "mandatory": true,
+            "defaultValue": 0.0
+        },
+        {
+            "name": "random_seed",
+            "label": "Random Seed",
+            "type": "INT",
+            "description": "Random seed for reproducibility (leave empty for random)",
+            "mandatory": false,
+            "defaultValue": null
+        }
+    ]
+}
+

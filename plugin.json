@@ -1,0 +1,25 @@
+{
+    "id": "monte-carlo-profit-simulator",
+    "version": "1.0.0",
+    "meta": {
+        "label": "Monte Carlo Profit Simulator",
+        "description": "Runs Monte Carlo simulations to simulate profit and rebates based on volume shocks, cost shocks, and fee erosion",
+        "author": "Your Name",
+        "icon": "icon-puzzle-piece",
+        "tags": ["monte-carlo", "simulation", "finance", "profit"],
+        "supportLevel": "NOT_SUPPORTED"
+    },
+    "params": [],
+    "components": [
+        {
+            "id": "monte-carlo-recipe",
+            "meta": {
+                "label": "Monte Carlo Profit Simulation",
+                "description": "Simulates profit and rebates using Monte Carlo methods",
+                "icon": "icon-random",
+                "type": "RECIPE"
+            }
+        }
+    ]
+}
+
